@@ -21,7 +21,8 @@ class CreateRegistrosTable extends Migration
             $table->string('pensamentos_automatico');
             $table->string('resultado');
             $table->string('situacao');
-            $table->foreign('idcliente')->references('id')->on('users');
+            $table->integer('cliente')->unsigned();
+            $table->foreign('cliente')->references('id')->on('users');
             $table->timestamps();
         });
     }

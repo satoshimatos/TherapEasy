@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->integer('crp')->nullable()->unique();
             $table->integer('idade');
-            $table->integer('psicologo')->unsigned();
+            $table->integer('psicologo')->unsigned()->nullable();
             $table->foreign('psicologo')->references('id')->on('users');
             $table->rememberToken();
             $table->timestamps();

@@ -6,6 +6,7 @@ use therapeasy\User;
 use therapeasy\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -22,6 +23,7 @@ class RegisterController extends Controller
 
     use RegistersUsers;
 
+    private $user;
     /**
      * Where to redirect users after registration.
      *
@@ -34,8 +36,9 @@ class RegisterController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(User $user)
     {
+        $this->user = $user;
         $this->middleware('guest');
     }
 
@@ -51,6 +54,8 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'crp' => 'required|integer',
+            'idade' => 'required|integer',
         ]);
     }
 
@@ -60,13 +65,38 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \therapeasy\User
      */
-    protected function create(array $data)
+    protected function createPsicologo(array $data)
     {
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'crp' => $data['crp'],
+            'idade' => $data['idade'],
         ]);
+    }
+
+    protected function createCliente(array $data)
+    {
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => bcrypt($data['password']),
+            'idade' => $data['idade'],
+            'psicologo' => $data['psicologo'],
+        ]);
+    }
+
+    protected function store(Request $request)
+    {
+        $dataForm = $request->all();
+        if (isset($dataForm['crp'])) {
+            $dataForm = $this->createPsicologo($request->all());
+        } else{
+            $dataForm = $this->createCliente($request->all());
+        }
+
+        return view('auth/register');
     }
 
     public function selecao()

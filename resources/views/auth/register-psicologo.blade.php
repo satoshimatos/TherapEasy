@@ -8,7 +8,7 @@
                 <div class="panel-heading">Cadastro de Psicologo</div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('cadastrar') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -29,8 +29,8 @@
                             <label for="idade" class="col-md-4 control-label">Idade</label>
 
                             <div class="col-md-6">
-                                <input id="idade" type="number" class="form-control" idade="idade"
-                                min="1" value="{{ old('idade') }}" required autofocus>
+                                <input id="idade" type="number" class="form-control" name="idade"
+                                min="1" value="{{ old('idade') }}" required>
 
                                 @if ($errors->has('idade'))
                                     <span class="help-block">

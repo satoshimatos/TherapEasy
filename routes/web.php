@@ -18,7 +18,15 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::post('/register', 'Auth\RegisterController@store')->name('cadastrar');
 Route::get('/register', 'Auth\RegisterController@selecao')->name('register');
 Route::get('/register/cliente', 'Auth\RegisterController@cliente')->name('register.cliente');
 Route::get('/register/psicologo', 'Auth\RegisterController@psicologo')->name('register.psicologo');
+
+Route::get('/pensamentos-cliente', 'RegistrosController@cliente')->name('pensamentos.cliente');
+Route::get('/pensamentos-cliente/new', 'RegistrosController@novo')->name('pensamentoCreate.cliente');
+Route::post('/pensamentos-cliente', 'RegistrosController@cadastrar')->name('pensamento.cadastrar');
+Route::get('/pensamento-cliente/{id}', 'RegistrosController@excluir')->name('pensamento.excluir');
+Route::get('/pensamentos-cliente/{id}/editar', 'RegistrosController@editar')->name('pensamentoUpdate.cliente');
+Route::post('/atualizar-pensamento/{id}', 'RegistrosController@salvar')->name('pensamento.atualizar');

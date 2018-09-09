@@ -13,6 +13,6 @@ class Registro extends Model
         'pensamentos_automatico',
         'resultado',
         'situacao',
-        'idcliente',
+        'cliente',
     ];
 }

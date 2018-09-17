@@ -20,10 +20,10 @@
                                     <label>Data:</label><br>
                                     {{date('d/m/Y', strtotime($registro->data))}}
                                 </div>
-                                <div class="col-sm-4">
+                                <!-- <div class="col-sm-4">
                                     <label>Cliente:</label><br>
                                     {{$registro->cliente}}
-                                </div>
+                                </div> -->
                             </div>
                             <div class="row">
                                 <div class="col-sm-6">

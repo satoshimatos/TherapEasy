@@ -12,7 +12,7 @@
                         <div class="col-sm-12" align="center">
                             <a href="{{ route('register.cliente') }}">
                                 <button type="button" class="btn btn-primary">
-                                    Cadastrar Cliente
+                                    Cadastrar Paciente
                                 </button>
                             </a>
                         </div>
@@ -21,7 +21,7 @@
                         <div class="col-sm-12" align="center">
                             <a href="{{ route('register.psicologo') }}">
                                 <button type="button" class="btn btn-primary">
-                                    Cadastrar Psicologo
+                                    Cadastrar Psicólogo
                                 </button>
                             </a>
                         </div>

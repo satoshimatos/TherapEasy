@@ -30,3 +30,5 @@ Route::post('/pensamentos-cliente', 'RegistrosController@cadastrar')->name('pens
 Route::get('/pensamento-cliente/{id}', 'RegistrosController@excluir')->name('pensamento.excluir');
 Route::get('/pensamentos-cliente/{id}/editar', 'RegistrosController@editar')->name('pensamentoUpdate.cliente');
 Route::post('/atualizar-pensamento/{id}', 'RegistrosController@salvar')->name('pensamento.atualizar');
+
+Route::get('/lista-clientes', 'PacientesController@paciente')->name('lista.pacientes');

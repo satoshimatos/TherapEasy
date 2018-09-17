@@ -28,7 +28,7 @@ class RegistrosController extends Controller
             $registros = Registro::where([
                 'cliente' => Auth::id()
             ])->where(
-                'data', 'like', $data
+                'data', 'like', $data.'%'
             )->orderBy('data', 'desc')->get();
         }
 

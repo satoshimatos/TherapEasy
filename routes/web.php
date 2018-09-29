@@ -32,3 +32,5 @@ Route::get('/pensamentos-cliente/{id}/editar', 'RegistrosController@editar')->na
 Route::post('/atualizar-pensamento/{id}', 'RegistrosController@salvar')->name('pensamento.atualizar');
 
 Route::get('/lista-clientes', 'PacientesController@paciente')->name('lista.pacientes');
+Route::get('/lista-clientes/{idPaciente}', 'PacientesController@registros')->name('pensamentos.psicologo');
+Route::get('/lista-clientes/{idPaciente}/pensamento/{idPensamento}/visualizar', 'PacientesController@pensamento')->name('pensamento.visualizar');

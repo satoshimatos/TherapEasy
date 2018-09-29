@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <div class="panel panel-info">
                 <div class="panel-heading">
-                    Novo Pensamento
+                    <label class="panel-title">Pensamento</label>
                 </div>
                 <form class="form-horizontal" method="POST" action="{{ route('pensamento.cadastrar') }}">
                     <div class="panel-body">

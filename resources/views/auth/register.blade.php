@@ -5,7 +5,9 @@
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-info">
-                <div class="panel-heading">Selecione uma opção</div>
+                <div class="panel-heading">
+                    <label class="panel-title">Selecione uma opção</label>
+                </div>
 
                 <div class="panel-body">
                     <div class="row">

@@ -4,10 +4,10 @@
 <div class="container">
     <form class="form-horizontal" method="GET" action="{{ route('lista.pacientes') }}">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-info">
                     <div class="panel-heading">
-                        Filtros
+                        <label class="panel-title">Filtros</label>
                     </div>
                     <div class="panel-body">
                         <div class="row">
@@ -28,43 +28,57 @@
             </div>
         </div>
     </form>
-    @foreach($clientes as $cliente)
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-info">
                     <div class="panel-heading">
                         <label class="panel-title">Clientes</label>
                     </div>
                     <div class="panel-body">
-                        <table>
-                            
+                        <table class="table table-hover table-striped" align="center">
+                            <thead>
+                                <tr>
+                                    <th style="text-align: center;">Código</th>
+                                    <th style="text-align: center;">Nome</th>
+                                    <th style="text-align: center;">Email</th>
+                                    <th style="text-align: center;">Idade</th>
+                                    <th style="text-align: center;">Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($clientes as $cliente)
+                                    <tr align="center">
+                                        <td>
+                                            {{ $cliente->id }}
+                                        </td>
+                                        <td>
+                                            {{ $cliente->name }}
+                                        </td>
+                                        <td>
+                                            {{ $cliente->email }}
+                                        </td>
+                                        <td>
+                                            {{ $cliente->idade }}
+                                        </td>
+                                        <td>
+                                            <a href="{!! route('pensamentos.psicologo', ['idPaciente' => $cliente->id]) !!}">
+                                                <button type="button" class="btn btn-info">
+                                                    Registros
+                                                </button>
+                                            </a>
+                                            <!-- <button type="button" class="btn btn-danger">
+                                                Excluir
+                                            </button> -->
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
                         </table>
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <label>Código:</label>
-                                {{ $cliente->id }}
-                            </div>
-                            <div class="col-sm-4">
-                                <label>Nome:</label>
-                                {{$cliente->name}}
-                            </div>
-                        </div>
                     </div>
                     <div class="panel-footer">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                    <button type="button" class="btn btn-info">
-                                        Visualizar
-                                    </button>
-                                    <button type="button" class="btn btn-danger">
-                                        Excluir
-                                    </button>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    @endforeach
 </div>
 @endsection

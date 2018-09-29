@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <div class="panel panel-info">
                 <div class="panel-heading">
-                    Editar Pensamento
+                    <label class="panel-title">Editar Pensamento</label>
                 </div>
                 <form class="form-horizontal" method="POST" action="{!! route('pensamento.atualizar', ['id' => $registro->id]) !!}">
                     <div class="panel-body">
@@ -20,10 +20,6 @@
                                     <label>Data:</label><br>
                                     {{date('d/m/Y', strtotime($registro->data))}}
                                 </div>
-                                <!-- <div class="col-sm-4">
-                                    <label>Cliente:</label><br>
-                                    {{$registro->cliente}}
-                                </div> -->
                             </div>
                             <div class="row">
                                 <div class="col-sm-6">

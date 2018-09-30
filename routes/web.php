@@ -19,6 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/dados-pessoais', 'PessoaController@dados')->name('dados.pessoais');
+Route::post('/dados-pessoais/salvar', 'PessoaController@salvar')->name('dados.pessoais.salvar');
+
 Route::post('/register', 'Auth\RegisterController@store')->name('cadastrar');
 Route::get('/register', 'Auth\RegisterController@selecao')->name('register');
 Route::get('/register/cliente', 'Auth\RegisterController@cliente')->name('register.cliente');

@@ -82,7 +82,7 @@
 
             <div class="content">
                 <div>
-                    <img src="/resources/images/logo-ajst.jpg" height="150" width="400" />
+                    <img src="images/logo-ajst.jpg" height="150" width="400" />
                 </div>
                 <div class="links">
                     <b>A sua central de informações com seus clientes.</b>

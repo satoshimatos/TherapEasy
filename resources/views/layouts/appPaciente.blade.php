@@ -30,7 +30,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        <img src="/resources/images/logo-ajst.jpg" height="30" width="150" />
+                        <img src="images/logo-ajst.jpg" height="30" width="150" />
                     </a>
                 </div>
 

@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{{ asset('favicon.ico') }}}">
 </head>
 <body>
     <div id="app">
@@ -29,7 +30,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        TherapEasy
+                        <img src="/resources/images/logo-ajst.jpg" height="30" width="150" />
                     </a>
                 </div>
 

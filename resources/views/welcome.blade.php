@@ -64,6 +64,8 @@
                 margin-bottom: 30px;
             }
         </style>
+        <link rel="shortcut icon" href="{{{ asset('favicon.ico') }}}">
+        <link rel="manifest" href="{{ asset('manifest.json') }}">
     </head>
     <body>
         <div class="flex-center position-ref full-height">
@@ -79,13 +81,11 @@
             @endif
 
             <div class="content">
-
-                <div class="title m-b-md">
-                    TherapEasy
+                <div>
+                    <img src="/resources/images/logo-ajst.jpg" height="150" width="400" />
                 </div>
-
                 <div class="links">
-                    A sua central de informações com seus clientes.
+                    <b>A sua central de informações com seus clientes.</b>
                 </div>
             </div>
         </div>

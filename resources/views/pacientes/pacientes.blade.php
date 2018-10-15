@@ -34,7 +34,7 @@
                     <div class="panel-heading">
                         <label class="panel-title">Clientes</label>
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body table-responsive">
                         <table class="table table-hover table-striped" align="center">
                             <thead>
                                 <tr>

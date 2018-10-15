@@ -32,7 +32,7 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-info">
                     <div class="panel-heading">
-                        <label class="panel-title">Clientes</label>
+                        <label class="panel-title">Pacientes</label>
                     </div>
                     <div class="panel-body table-responsive">
                         <table class="table table-hover table-striped" align="center">

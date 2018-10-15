@@ -30,7 +30,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        <img src="images/logo-ajst.jpg" height="30" width="150" />
+                        <img src="/public/images/logo-ajst.jpg" height="30" width="150" />
                     </a>
                 </div>
 
@@ -47,7 +47,7 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Cadastro</a></li>
                         @else
-                            <li><a href="{{ route('lista.pacientes') }}">Clientes</a></li>
+                            <li><a href="{{ route('lista.pacientes') }}">Pacientes</a></li>
                             <li><a href="#">Relatório</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

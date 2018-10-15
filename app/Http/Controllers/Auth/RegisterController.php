@@ -90,10 +90,13 @@ class RegisterController extends Controller
     protected function store(Request $request)
     {
         $dataForm = $request->all();
+
+        $dataForm['idade'] = floor((time() - strtotime($dataForm['idade']))/31556926);
+
         if (isset($dataForm['crp'])) {
-            $dataForm = $this->createPsicologo($request->all());
+            $dataForm = $this->createPsicologo($dataForm);
         } else{
-            $dataForm = $this->createCliente($request->all());
+            $dataForm = $this->createCliente($dataForm);
         }
 
         return view('auth/register');

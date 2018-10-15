@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-info">
                 <div class="panel-heading">
-                    <label class="panel-title">Cadastro de Cliente</label>
+                    <label class="panel-title">Cadastro de Paciente</label>
                 </div>
 
                 <div class="panel-body">
@@ -28,11 +28,11 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('idade') ? ' has-error' : '' }}">
-                            <label for="idade" class="col-md-4 control-label">Idade</label>
+                            <label for="idade" class="col-md-4 control-label">Data de Nascimento</label>
 
                             <div class="col-md-6">
-                                <input id="idade" type="number" class="form-control" name="idade"
-                                min="1" value="{{ old('idade') }}" required autofocus>
+                                <input class="form-control" type="date" name="idade" id="idade"
+                                min="1" value="{{ old('idade') }}" required>
 
                                 @if ($errors->has('idade'))
                                     <span class="help-block">

@@ -29,10 +29,10 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('idade') ? ' has-error' : '' }}">
-                            <label for="idade" class="col-md-4 control-label">Idade</label>
+                            <label for="idade" class="col-md-4 control-label">Data de Nascimento</label>
 
                             <div class="col-md-6">
-                                <input id="idade" type="number" class="form-control" name="idade"
+                                <input class="form-control" type="date" name="idade" id="idade"
                                 min="1" value="{{ old('idade') }}" required>
 
                                 @if ($errors->has('idade'))

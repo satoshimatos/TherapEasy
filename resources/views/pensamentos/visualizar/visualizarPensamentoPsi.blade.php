@@ -20,7 +20,7 @@
                                 {{date('d/m/Y', strtotime($registro->data))}}
                             </div>
                             <div class="col-sm-4">
-                                <label>Cliente:</label><br>
+                                <label>Paciente:</label><br>
                                 {{$registro->nome}}
                             </div>
                         </div>

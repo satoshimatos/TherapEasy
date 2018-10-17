@@ -40,7 +40,7 @@ class PacientesController extends Controller
         if (!isset($dataForm['data'])) {
             $registros = Registro::where([
                 'cliente' => $id
-            ])->orderBy('data', 'desc')->get();
+            ])->orderBy('created_at', 'desc')->get();
         } else{
 
             $data = explode('/',$dataForm['data']);
@@ -53,7 +53,7 @@ class PacientesController extends Controller
                 'cliente' => $id
             ])->where(
                 'data', 'like', $data.'%'
-            )->orderBy('data', 'desc')->get();
+            )->orderBy('created_at', 'desc')->get();
         }
 
         $cliente = User::where([
@@ -62,6 +62,7 @@ class PacientesController extends Controller
 
         foreach ($registros as $registro) {
             $registro['nome'] = $cliente;
+            $registro['data'] = substr($registro['attributes']['created_at'],0,10);
         }
 
         return view('pensamentos/pensamentosPsi', compact('registros'));
@@ -80,6 +81,8 @@ class PacientesController extends Controller
         $registro['nome'] = User::where([
             'id' => $idPaciente
         ])->get()[0]['name'];
+
+        $registro['data'] = substr($registro['attributes']['created_at'],0,10);
 
         return view('pensamentos/visualizar/visualizarPensamentoPsi', compact('registro'));
     }

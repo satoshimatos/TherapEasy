@@ -28,16 +28,16 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('idade') ? ' has-error' : '' }}">
-                            <label for="idade" class="col-md-4 control-label">Data de Nascimento</label>
+                        <div class="form-group{{ $errors->has('nascimento') ? ' has-error' : '' }}">
+                            <label for="nascimento" class="col-md-4 control-label">Data de Nascimento</label>
 
                             <div class="col-md-6">
-                                <input class="form-control" type="date" name="idade" id="idade"
-                                min="1" value="{{ old('idade') }}" required>
+                                <input class="form-control" type="date" name="nascimento" id="nascimento"
+                                min="1" value="{{ old('nascimento') }}" required>
 
-                                @if ($errors->has('idade'))
+                                @if ($errors->has('nascimento'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('idade') }}</strong>
+                                        <strong>{{ $errors->first('nascimento') }}</strong>
                                     </span>
                                 @endif
                             </div>

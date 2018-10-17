@@ -41,7 +41,7 @@
                                     <th style="text-align: center;">Código</th>
                                     <th style="text-align: center;">Nome</th>
                                     <th style="text-align: center;">Email</th>
-                                    <th style="text-align: center;">Idade</th>
+                                    <th style="text-align: center;">Nascimento</th>
                                     <th style="text-align: center;">Ações</th>
                                 </tr>
                             </thead>
@@ -58,7 +58,7 @@
                                             {{ $cliente->email }}
                                         </td>
                                         <td>
-                                            {{ $cliente->idade }}
+                                            {{date('d/m/Y', strtotime($cliente->nascimento))}}
                                         </td>
                                         <td>
                                             <a href="{!! route('pensamentos.psicologo', ['idPaciente' => $cliente->id]) !!}">

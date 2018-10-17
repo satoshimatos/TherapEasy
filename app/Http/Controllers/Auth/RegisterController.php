@@ -55,7 +55,7 @@ class RegisterController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
             'crp' => 'required|integer',
-            'idade' => 'required|integer',
+            'nascimento' => 'required|string|max:10',
         ]);
     }
 
@@ -72,7 +72,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'crp' => $data['crp'],
-            'idade' => $data['idade'],
+            'nascimento' => $data['nascimento'],
         ]);
     }
 
@@ -82,7 +82,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'idade' => $data['idade'],
+            'nascimento' => $data['nascimento'],
             'psicologo' => $data['psicologo'],
         ]);
     }
@@ -90,8 +90,6 @@ class RegisterController extends Controller
     protected function store(Request $request)
     {
         $dataForm = $request->all();
-
-        $dataForm['idade'] = floor((time() - strtotime($dataForm['idade']))/31556926);
 
         if (isset($dataForm['crp'])) {
             $dataForm = $this->createPsicologo($dataForm);

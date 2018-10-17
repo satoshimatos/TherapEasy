@@ -82,10 +82,14 @@
 
             <div class="content">
                 <div>
-                    <img src="images/logo-ajst.jpg" height="150" width="400" />
+                    <img src="images/icone-ajst.jpg" height="330" width="330" />
                 </div>
+                <h1>TherapEasy</h1>
                 <div class="links">
-                    <b>A sua central de informações com seus clientes.</b>
+                    <b>
+                        A sua central de informações<br>
+                        com seus clientes.
+                    </b>
                 </div>
             </div>
         </div>

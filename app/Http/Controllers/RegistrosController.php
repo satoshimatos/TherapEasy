@@ -16,7 +16,7 @@ class RegistrosController extends Controller
         if (!isset($dataForm['data'])) {
             $registros = Registro::where([
                 'cliente' => Auth::id()
-            ])->orderBy('data', 'desc')->get();
+            ])->orderBy('created_at', 'desc')->get();
         } else{
 
             $data = explode('/',$dataForm['data']);
@@ -28,8 +28,12 @@ class RegistrosController extends Controller
             $registros = Registro::where([
                 'cliente' => Auth::id()
             ])->where(
-                'data', 'like', $data.'%'
-            )->orderBy('data', 'desc')->get();
+                'created_at', 'like', $data.'%'
+            )->orderBy('created_at', 'desc')->get();
+        }
+
+        foreach ($registros as $registro) {
+            $registro['data'] = substr($registro['attributes']['created_at'],0,10);
         }
 
         return view('pensamentos/pensamentosCli', compact('registros'));
@@ -45,7 +49,7 @@ class RegistrosController extends Controller
         $user = Auth::user();
         $dataForm = $request->all();
 
-        $dataForm['data'] = new \DateTime();
+        //$dataForm['data'] = new \DateTime();
         $dataForm['cliente'] = Auth::id();
         $this->createPensamento($dataForm);
 
@@ -63,7 +67,7 @@ class RegistrosController extends Controller
             'conclusao' => $data['conclusao'],
             'resultado' => $data['resultado'],
             'cliente' => $data['cliente'],
-            'data' => $data['data'],
+            //'data' => $data['data'],
         ]);
     }
 
@@ -78,6 +82,8 @@ class RegistrosController extends Controller
         $registro['cliente'] = User::where([
             'id' => Auth::id()
         ])->get()[0]['name'];
+
+        $registro['data'] = substr($registro['attributes']['created_at'],0,10);
 
         return view('pensamentos/visualizar/visualizarPensamentoCli', compact('registro'));
     }

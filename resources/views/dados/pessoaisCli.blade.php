@@ -25,8 +25,8 @@
                                 {{$pessoa->email}}
                             </div>
                             <div class="col-sm-4">
-                                <label>Idade:</label>
-                                {{$pessoa->idade}}
+                                <label>Data de Nascimento:</label>
+                                {{date('d/m/Y', strtotime($pessoa->nascimento))}}
                             </div>
                             <div class="col-sm-4">
                                 <label>Psicologo:</label>

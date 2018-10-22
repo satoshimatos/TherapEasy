@@ -22,7 +22,7 @@
             }
 
             .full-height {
-                height: 100vh;
+                height: 90vh;
             }
 
             .flex-center {
@@ -81,11 +81,9 @@
             @endif
 
             <div class="content">
-                <div>
-                    <img src="images/icone-ajst.jpg" height="330" width="330" />
-                </div>
+                <img src="images/icone-ajst.jpg" height="300" width="300" />
                 <h1>TherapEasy</h1>
-                <div class="links">
+                <div>
                     <b>
                         A sua central de informações<br>
                         com seus clientes.
@@ -93,5 +91,10 @@
                 </div>
             </div>
         </div>
+        <footer class="row">
+            <div id="copyright" align="center">
+                <b>Versão 4.0.0</b>
+            </div>
+        </footer>
     </body>
 </html>

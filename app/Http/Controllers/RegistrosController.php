@@ -18,17 +18,20 @@ class RegistrosController extends Controller
                 'cliente' => Auth::id()
             ])->orderBy('created_at', 'desc')->get();
         } else{
-
             $data = explode('/',$dataForm['data']);
             $data = implode('-',$data);
 
             $data = new \DateTime($data);
-            $data = $data->format('Y-m-d');
+            $de = $data->format('Y-m-d');
+            $data->modify('+1 day');
+            $ate = $data->format('Y-m-d');
 
             $registros = Registro::where([
                 'cliente' => Auth::id()
             ])->where(
-                'created_at', 'like', $data.'%'
+                'created_at', '>=', $de
+            )->where(
+                'created_at', '<', $ate
             )->orderBy('created_at', 'desc')->get();
         }
 

@@ -38,4 +38,5 @@ Route::get('/lista-clientes', 'PacientesController@paciente')->name('lista.pacie
 Route::get('/lista-clientes/{idPaciente}', 'PacientesController@registros')->name('pensamentos.psicologo');
 Route::get('/lista-clientes/{idPaciente}/pensamento/{idPensamento}/visualizar', 'PacientesController@pensamento')->name('pensamento.visualizar');
 
-Route::get('/relatorio/cliente/{idPaciente}', 'RelatorioController@relatorio')->name('relatorio.cliente');
+Route::get('/relatorios', 'RelatorioController@lista')->name('lista.relatorios');
+Route::get('/relatorios/gerar', 'RelatorioController@relatorio')->name('relatorio.cliente');

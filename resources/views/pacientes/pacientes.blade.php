@@ -66,11 +66,6 @@
                                                     Registros
                                                 </button>
                                             </a>
-                                            <a href="{!! route('relatorio.cliente', ['idPaciente' => $cliente->id]) !!}">
-                                                <button type="button" class="btn btn-info">
-                                                    Relatório
-                                                </button>
-                                            </a>
                                             <!-- <button type="button" class="btn btn-danger">
                                                 Excluir
                                             </button> -->

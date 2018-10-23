@@ -37,24 +37,9 @@ class PacientesController extends Controller
         $id = $request->idPaciente;
         $dataForm = $request->all();
 
-        if (!isset($dataForm['data'])) {
-            $registros = Registro::where([
-                'cliente' => $id
-            ])->orderBy('created_at', 'desc')->get();
-        } else{
-
-            $data = explode('/',$dataForm['data']);
-            $data = implode('-',$data);
-
-            $data = new \DateTime($data);
-            $data = $data->format('Y-m-d');
-
-            $registros = Registro::where([
-                'cliente' => $id
-            ])->where(
-                'data', 'like', $data.'%'
-            )->orderBy('created_at', 'desc')->get();
-        }
+        $registros = Registro::where([
+            'cliente' => $id
+        ])->orderBy('created_at', 'desc')->get();
 
         $cliente = User::where([
             'id' => $id

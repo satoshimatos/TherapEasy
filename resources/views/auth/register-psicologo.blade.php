@@ -61,7 +61,7 @@
                             <label for="crp" class="col-md-4 control-label">CRP</label>
 
                             <div class="col-md-6">
-                                <input id="crp" type="text" class="form-control" name="crp" value="{{ old('crp') }}" required>
+                                <input id="crp" type="number" class="form-control" name="crp" min="1" value="{{ old('crp') }}" required>
 
                                 @if ($errors->has('crp'))
                                     <span class="help-block">

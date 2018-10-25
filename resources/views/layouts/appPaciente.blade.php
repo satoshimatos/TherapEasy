@@ -31,6 +31,7 @@
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
                         <img src="/public/images/logo-ajst.jpg" height="30" width="150" />
+                        <!-- <img src="/TherapEasy/public/images/logo-ajst.jpg" height="30" width="150" /> -->
                     </a>
                 </div>
 

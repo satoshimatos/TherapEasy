@@ -17,15 +17,14 @@ class PacientesController extends Controller
             $clientes = User::where([
                 'psicologo' => Auth::id()
             ])->orderBy('name', 'asc')->get();
-        } else{
-
-            $nome = explode(' ',$dataForm['nome']);
-            $nome = implode('%',$nome);
+        } else {
+            $nome = explode(' ', $dataForm['nome']);
+            $nome = implode('%', $nome);
 
             $clientes = User::where([
                 'psicologo' => Auth::id()
             ])->where(
-                'name', 'ilike', '%'.$nome.'%'
+                'name', 'ilike', "%$nome%"
             )->orderBy('name', 'asc')->get();
         }
 
